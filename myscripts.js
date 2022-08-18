@@ -11,3 +11,18 @@ function getComputerChoice() {
         return "Scissors";
     }
 }
+
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection === "rock" && computerSelection === "Scissors") {
+        return "Congrats! You Win!";
+    }
+    if (playerSelection === "rock" && computerSelection === "Rock") {
+        return "Tie Game!";
+    }
+    else return "You Lose!"
+}
+
+const playerSelection = "rock";
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection, computerSelection));
+
