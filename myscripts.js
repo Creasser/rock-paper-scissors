@@ -95,6 +95,20 @@ function game() {
         console.log("Your score is" + " " + playerScore)
         console.log("Opponent score is" + " " + computerScore)
     }
+
+    function winner(playerScore, computerScore) {
+        if (playerScore > computerScore) {
+            console.log("You won the game! Congrats!")
+        }
+        if (playerScore < computerScore) {
+            console.log("You lost the game! You suck!")
+        }
+        if (playerScore === computerScore) {
+            console.log("This game was a tie! Play again!")
+            
+        }
+    }
+    winner(playerScore, computerScore)
 }
 
 let playerScore = 0
