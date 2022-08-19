@@ -1,43 +1,73 @@
+
+
+
 //have a function that selects a random choice from a set list
 
+
+//GET COMPUTER INPUT
 function getComputerChoice() {
-    var choice = ['Rock','Paper','Scissors'];
-    var randChoice = Math.floor(Math.random() * choice.length) + 1;
+    const choice = ['Rock','Paper','Scissors'];
+    let randChoice = Math.floor(Math.random() * choice.length) + 1;
     if (randChoice === 1) {
-        return "Rock"; 
-    } if (randChoice === 2) {
+        console.log("Computer chose rock")
+        return "Rock";
+   } if (randChoice === 2) {
+        console.log("Computer chose paper")
         return "Paper";
     } if (randChoice === 3) {
+        console.log("Computer chose scissors")
         return "Scissors";
     }
 }
-//all the possible win and tie variations
-function playRound(playerSelection, computerSelection) {
-    if (playerSelection === "rock" && computerSelection === "Scissors") {
-        return "Congrats! You Win!";
-    }
-    if (playerSelection === "rock" && computerSelection === "Rock") {
-        return "Tie Game!";
-    }
-    if (playerSelection === "paper" && computerSelection === "Rock") {
-        return "Congrats! You Win!"
-    }
-    if (playerSelection === "paper" && computerSelection === "Paper") {
-        return "Tie Game!"
-    }
-    if (playerSelection === "scissors" && computerSelection === "Paper") {
-        return "Congrats! You Win!"
-    }
-    if (playerSelection === "scissors" && computerSelection === "Scissors") {
-        return "Tie Game!"
-    }
-    else return "You Lose!"
-}
-//make another var to store the player selection, then convert that selection to lowercase and store it in the player selection var
-const playerChoice = prompt("Choose Rock, Paper, or Scissors");
-const playerSelection = playerChoice.toLowerCase();
-let computerSelection = getComputerChoice();
 
+
+
+//GET USER INPUT
+function getPlayerChoice() {
+    const playerChoice = prompt("Choose Rock, Paper, or Scissors").toLowerCase()
+    if (playerChoice === "rock" || playerChoice === "paper" || playerChoice === "scissors") {
+    console.log("You chose" + " " + playerChoice)
+    return playerChoice
+    } else {
+    console.log("Error! Try again!")
+    getPlayerChoice();
+
+
+}
+}
+
+let userChoice = getPlayerChoice()
+const computerChoice = getComputerChoice()
+const winner = playRound(userChoice, computerChoice)        
+
+function playRound(userChoice, computerChoice) {
+    //ROCK
+    if (userChoice === "rock" && computerChoice === "Paper") 
+        console.log("You Lose! Paper beats Rock!");
+    else if (userChoice === "rock" && computerChoice === "Scissors")
+        console.log("You Win! Rock beats Scissors!");
+    else if (userChoice === "rock" && computerChoice === "Rock")
+        console.log("Tie Game!");
+    //PAPER    
+    else if (userChoice === "paper" && computerChoice === "Rock")   
+        console.log("You Win! Paper beats Rock!");
+    else if (userChoice === "paper" && computerChoice === "Scissors")
+        console.log("You Lose! Scissors beats Paper!");
+    else if (userChoice === "paper" && computerChoice === "Paper")
+        console.log("Tie Game!");
+    //SCISSORS
+    else if (userChoice === "scissors" && computerChoice === "Rock")
+        console.log("You Lose! Rock beats Scissors!"); 
+    else if (userChoice === "scissors" && computerChoice === "Paper")
+        console.log("You Win! Scissors beats Paper!");
+    else if (userChoice === "scissors" && computerChoice === "Scissors")
+        console.log("Tie Game!")  
+
+}    
+
+
+
+    
 
 
 
