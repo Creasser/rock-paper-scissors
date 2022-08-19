@@ -36,41 +36,68 @@ function getPlayerChoice() {
 }
 }
 
-let userChoice = getPlayerChoice()
-const computerChoice = getComputerChoice()
-const winner = playRound(userChoice, computerChoice)        
+//let userChoice = getPlayerChoice()
+//const computerChoice = getComputerChoice()
+//const winner = playRound(userChoice, computerChoice)        
 
 function playRound(userChoice, computerChoice) {
     //ROCK
-    if (userChoice === "rock" && computerChoice === "Paper") 
-        console.log("You Lose! Paper beats Rock!");
-    else if (userChoice === "rock" && computerChoice === "Scissors")
-        console.log("You Win! Rock beats Scissors!");
-    else if (userChoice === "rock" && computerChoice === "Rock")
+    if (userChoice === "rock" && computerChoice === "Paper"){ 
+        console.log("You Lose! Paper beats Rock!")
+        computerScore++ ;
+    }
+     if (userChoice === "rock" && computerChoice === "Scissors"){
+        console.log("You Win! Rock beats Scissors!")
+        playerScore++ ;
+     }
+     if (userChoice === "rock" && computerChoice === "Rock"){
         console.log("Tie Game!");
+     }
     //PAPER    
-    else if (userChoice === "paper" && computerChoice === "Rock")   
-        console.log("You Win! Paper beats Rock!");
-    else if (userChoice === "paper" && computerChoice === "Scissors")
-        console.log("You Lose! Scissors beats Paper!");
-    else if (userChoice === "paper" && computerChoice === "Paper")
+     if (userChoice === "paper" && computerChoice === "Rock"){   
+        console.log("You Win! Paper beats Rock!")
+        playerScore++ ;
+     }
+     if (userChoice === "paper" && computerChoice === "Scissors"){
+        console.log("You Lose! Scissors beats Paper!")
+        computerScore++ ;
+     }
+     if (userChoice === "paper" && computerChoice === "Paper"){
         console.log("Tie Game!");
+     }
     //SCISSORS
-    else if (userChoice === "scissors" && computerChoice === "Rock")
-        console.log("You Lose! Rock beats Scissors!"); 
-    else if (userChoice === "scissors" && computerChoice === "Paper")
-        console.log("You Win! Scissors beats Paper!");
-    else if (userChoice === "scissors" && computerChoice === "Scissors")
-        console.log("Tie Game!")  
+     if (userChoice === "scissors" && computerChoice === "Rock"){
+        console.log("You Lose! Rock beats Scissors!")
+        computerScore++ ; 
+     }
+     if (userChoice === "scissors" && computerChoice === "Paper"){
+        console.log("You Win! Scissors beats Paper!")
+        playerScore++ ;
+     }
+     if (userChoice === "scissors" && computerChoice === "Scissors"){
+        console.log("Tie Game!") 
+     }   
+    
+
 
 }    
 
 
-
+//call the playRound function inside of a loop, asking for a different player selection each time, and getting a new computer selection each time.
+//report a winner of a game of 5
     
 
+function game() {
+    for (let i = 0; i < 5; i++) {
+        let userChoice = getPlayerChoice()
+        let computerChoice = getComputerChoice()
+        playRound(userChoice, computerChoice)
+        console.log("Your score is" + " " + playerScore)
+        console.log("Opponent score is" + " " + computerScore)
+    }
+}
 
-
-    
+let playerScore = 0
+let computerScore = 0
     
     
