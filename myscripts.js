@@ -104,7 +104,8 @@ function game() {
             console.log("You lost the game! You suck!")
         }
         if (playerScore === computerScore) {
-            console.log("This game was a tie! Play again!")
+            console.log("This game was a tie! Play again!");
+            
             
         }
     }
