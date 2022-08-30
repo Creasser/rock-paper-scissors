@@ -6,9 +6,16 @@ body {
 .header {
     display: flex;
     justify-content: space-around;
-    padding: 20px
+    padding: 20px;
+    font-size: 3rem;
 }
-
+.sub-header{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 4rem;
+    font-size: 2rem;
+    font-style: oblique;
+}
 .selection-container {
     display: flex;
     justify-content: space-evenly;
@@ -24,4 +31,29 @@ img {
 button {
     background-color: black;
     border-radius: 50%;
+    border: none;
+}
+
+.results {
+    display: flex;
+    border: solid black;
+    width: 45rem;
+    height: 30rem;
+    margin-top: 3.5rem;
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.playerScore {
+    font-size: 2rem;
+    margin-left: 20rem;
+}
+
+.computerScore {
+    font-size: 2rem;
+    margin-right: 20rem;
 }
