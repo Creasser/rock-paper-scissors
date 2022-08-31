@@ -1,4 +1,5 @@
-
+let playerScore = 0
+let computerScore = 0
 
 
 //have a function that selects a random choice from a set list
@@ -41,6 +42,7 @@ function getPlayerChoice() {
 //const winner = playRound(userChoice, computerChoice)        
 
 function playRound(userChoice, computerChoice) {
+
     //ROCK
     if (userChoice === "rock" && computerChoice === "Paper"){ 
         console.log("You Lose! Paper beats Rock!")
@@ -87,32 +89,57 @@ function playRound(userChoice, computerChoice) {
 //report a winner of a game of 5
     
 
-function game() {
-    for (let i = 0; i < 5; i++) {
-        let userChoice = getPlayerChoice()
+//function game() {
+    //for (let i = 0; i < 5; i++) {
+       // let userChoice = getPlayerChoice()
+        //let computerChoice = getComputerChoice()
+        //playRound(userChoice, computerChoice)
+        //console.log("Your score is" + " " + playerScore)
+        //console.log("Opponent score is" + " " + computerScore)
+    //}
+
+    //function winner(playerScore, computerScore) {
+       // if (playerScore > computerScore) {
+            //console.log("You won the game! Congrats!")
+       // }
+       // if (playerScore < computerScore) {
+            //console.log("You lost the game! You suck!")
+      //  }
+       // if (playerScore === computerScore) {
+           // console.log("This game was a tie! Play again!");
+            
+            
+      //  }
+  //  }
+    //winner(playerScore, computerScore)
+//}
+
+
+//let playerChoice = getPlayerChoice();
+
+ const rock = document.querySelector('#rock')
+    rock.addEventListener("click", function() {
         let computerChoice = getComputerChoice()
-        playRound(userChoice, computerChoice)
-        console.log("Your score is" + " " + playerScore)
-        console.log("Opponent score is" + " " + computerScore)
-    }
+        playRound('rock', computerChoice)
+        
+    })
 
-    function winner(playerScore, computerScore) {
-        if (playerScore > computerScore) {
-            console.log("You won the game! Congrats!")
-        }
-        if (playerScore < computerScore) {
-            console.log("You lost the game! You suck!")
-        }
-        if (playerScore === computerScore) {
-            console.log("This game was a tie! Play again!");
-            
-            
-        }
-    }
-    winner(playerScore, computerScore)
-}
+const paper = document.querySelector('#paper')
+    paper.addEventListener('click', function(){
+        let computerChoice = getComputerChoice()
+        playRound('paper', computerChoice)
+        
+    })
 
-let playerScore = 0
-let computerScore = 0
-    
-    
+const scissors = document.querySelector('#scissors')
+    scissors.addEventListener('click', function(){
+        let computerChoice = getComputerChoice()
+        playRound('scissors', computerChoice)
+    })
+
+
+
+
+
+
+
