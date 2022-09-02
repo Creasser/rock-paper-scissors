@@ -44,93 +44,82 @@ function getPlayerChoice() {
 function playRound(userChoice, computerChoice) {
 
     const results = document.querySelector('.results')
-    //const content = document.createElement('div');
-    //content.classList.add('content');
-    //content.textContent = 'This is working';
-    //results.appendChild(content);
-
+    const content = document.createElement('div');
+    content.setAttribute('style', 'white-space: pre');
+    content.classList.add('content');
 
     //ROCK
     if (userChoice === "rock" && computerChoice === "Paper"){ 
 
-        const content = document.createElement('div');
-        content.setAttribute('style', 'white-space: pre');
-        content.classList.add('content');
         content.textContent = "Computer Chose Paper. \r\n"
         content.textContent += 'You Lose! Paper beats Rock!'
         results.appendChild(content);
-
-
-        console.log("You Lose! Paper beats Rock!")
         computerScore++ ;
+
     }
      if (userChoice === "rock" && computerChoice === "Scissors"){
-        console.log("You Win! Rock beats Scissors!")
+        content.textContent = "Computer Chose Scissors. \r\n"
+        content.textContent += 'You Win! Rock beats Scissors!'
+        results.appendChild(content);
         playerScore++ ;
+        ps.textContent = playerScore
      }
      if (userChoice === "rock" && computerChoice === "Rock"){
-        console.log("Tie Game!");
+        content.textContent = "Computer Chose Rock. \r\n"
+        content.textContent += 'Tie Game! Play again!'
+        results.appendChild(content);
+        //console.log("Tie Game!");
      }
     //PAPER    
-     if (userChoice === "paper" && computerChoice === "Rock"){   
-        console.log("You Win! Paper beats Rock!")
+     if (userChoice === "paper" && computerChoice === "Rock"){ 
+        content.textContent = "Computer Chose Rock. \r\n"
+        content.textContent += 'You Win! Paper beats Rock!'
+        results.appendChild(content);  
+        //console.log("You Win! Paper beats Rock!")
         playerScore++ ;
      }
      if (userChoice === "paper" && computerChoice === "Scissors"){
-        console.log("You Lose! Scissors beats Paper!")
+        content.textContent = "Computer Chose Scissors. \r\n"
+        content.textContent += 'You Lose! Scissors beats Paper!'
+        results.appendChild(content);
+        //console.log("You Lose! Scissors beats Paper!")
         computerScore++ ;
      }
      if (userChoice === "paper" && computerChoice === "Paper"){
-        console.log("Tie Game!");
+        content.textContent = "Computer Chose Paper. \r\n"
+        content.textContent += 'Tie Game! Play Again!'
+        results.appendChild(content);
+        //console.log("Tie Game!");
      }
     //SCISSORS
      if (userChoice === "scissors" && computerChoice === "Rock"){
-        console.log("You Lose! Rock beats Scissors!")
+        content.textContent = "Computer Chose Rock. \r\n"
+        content.textContent += 'You Lose! Rock beats Scissors!'
+        results.appendChild(content);
+        //console.log("You Lose! Rock beats Scissors!")
         computerScore++ ; 
      }
      if (userChoice === "scissors" && computerChoice === "Paper"){
-        console.log("You Win! Scissors beats Paper!")
+        content.textContent = "Computer Chose Paper. \r\n"
+        content.textContent += 'You Win! Scissors beats Paper!'
+        results.appendChild(content);
+        //console.log("You Win! Scissors beats Paper!")
         playerScore++ ;
      }
      if (userChoice === "scissors" && computerChoice === "Scissors"){
-        console.log("Tie Game!") 
+        content.textContent = "Computer Chose Scissors. \r\n"
+        content.textContent += 'Tie Game! Play Again!'
+        results.appendChild(content);
+        //console.log("Tie Game!") 
      }   
     
+            
 
 
 }    
 
-
-//call the playRound function inside of a loop, asking for a different player selection each time, and getting a new computer selection each time.
-//report a winner of a game of 5
-    
-
-//function game() {
-    //for (let i = 0; i < 5; i++) {
-       // let userChoice = getPlayerChoice()
-        //let computerChoice = getComputerChoice()
-        //playRound(userChoice, computerChoice)
-        //console.log("Your score is" + " " + playerScore)
-        //console.log("Opponent score is" + " " + computerScore)
-    //}
-
-    //function winner(playerScore, computerScore) {
-       // if (playerScore > computerScore) {
-            //console.log("You won the game! Congrats!")
-       // }
-       // if (playerScore < computerScore) {
-            //console.log("You lost the game! You suck!")
-      //  }
-       // if (playerScore === computerScore) {
-           // console.log("This game was a tie! Play again!");
-            
-            
-      //  }
-  //  }
-    //winner(playerScore, computerScore)
-//}
-
-
+const ps = document.querySelector('.ps')
+const cs = document.querySelector('.cs')
 //let playerChoice = getPlayerChoice();
 
  const rock = document.querySelector('#rock')
@@ -138,13 +127,6 @@ function playRound(userChoice, computerChoice) {
         let computerChoice = getComputerChoice()
         playRound('rock', computerChoice)
         //can possibly call on a function that will report the results and append the div in the center with the text
-
-        //const results = document.querySelector('#results')
-        //const results = document.querySelector('.results')
-        //const content = document.createElement('div');
-        //content.classList.add('content');
-        //content.textContent = 'This is working';
-       //results.appendChild(content);
     })
 
 const paper = document.querySelector('#paper')
