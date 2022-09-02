@@ -1,11 +1,6 @@
 let playerScore = 0
 let computerScore = 0
 
-//const results = document.querySelector('#results')
-//have a function that selects a random choice from a set list
-
-
-//GET COMPUTER INPUT
 function getComputerChoice() {
     const choice = ['Rock','Paper','Scissors'];
     let randChoice = Math.floor(Math.random() * choice.length) + 1;
@@ -20,26 +15,6 @@ function getComputerChoice() {
         return "Scissors";
     }
 }
-
-
-
-//GET USER INPUT
-function getPlayerChoice() {
-    const playerChoice = prompt("Choose Rock, Paper, or Scissors").toLowerCase()
-    if (playerChoice === "rock" || playerChoice === "paper" || playerChoice === "scissors") {
-    console.log("You chose" + " " + playerChoice)
-    return playerChoice
-    } else {
-    console.log("Error! Try again!")
-    getPlayerChoice();
-
-
-}
-}
-
-//let userChoice = getPlayerChoice()
-//const computerChoice = getComputerChoice()
-//const winner = playRound(userChoice, computerChoice)        
 
 function playRound(userChoice, computerChoice) {
 
@@ -148,10 +123,3 @@ const scissors = document.querySelector('#scissors')
         let computerChoice = getComputerChoice()
         playRound('scissors', computerChoice)
     })
-
-
-
-
-
-
-
