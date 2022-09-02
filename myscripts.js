@@ -1,7 +1,7 @@
 let playerScore = 0
 let computerScore = 0
 
-
+//const results = document.querySelector('#results')
 //have a function that selects a random choice from a set list
 
 
@@ -43,8 +43,24 @@ function getPlayerChoice() {
 
 function playRound(userChoice, computerChoice) {
 
+    const results = document.querySelector('.results')
+    //const content = document.createElement('div');
+    //content.classList.add('content');
+    //content.textContent = 'This is working';
+    //results.appendChild(content);
+
+
     //ROCK
     if (userChoice === "rock" && computerChoice === "Paper"){ 
+
+        const content = document.createElement('div');
+        content.setAttribute('style', 'white-space: pre');
+        content.classList.add('content');
+        content.textContent = "Computer Chose Paper. \r\n"
+        content.textContent += 'You Lose! Paper beats Rock!'
+        results.appendChild(content);
+
+
         console.log("You Lose! Paper beats Rock!")
         computerScore++ ;
     }
@@ -121,7 +137,14 @@ function playRound(userChoice, computerChoice) {
     rock.addEventListener("click", function() {
         let computerChoice = getComputerChoice()
         playRound('rock', computerChoice)
-        
+        //can possibly call on a function that will report the results and append the div in the center with the text
+
+        //const results = document.querySelector('#results')
+        //const results = document.querySelector('.results')
+        //const content = document.createElement('div');
+        //content.classList.add('content');
+        //content.textContent = 'This is working';
+       //results.appendChild(content);
     })
 
 const paper = document.querySelector('#paper')
@@ -137,6 +160,7 @@ const scissors = document.querySelector('#scissors')
         playRound('scissors', computerChoice)
     })
 
+//make a const for the div container, put the container.documenttextContent inside of the win conditions.
 
 
 
